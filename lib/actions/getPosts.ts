@@ -35,7 +35,7 @@ export async function getPosts(
             };
         });
 
-        return postsWithAverageRating as PostWithAverageRating[];
+        return postsWithAverageRating as PostWithRating[];
     } catch (error) {
         console.error("Error fetching posts:", error);
         return []; // Return an empty array in case of error
