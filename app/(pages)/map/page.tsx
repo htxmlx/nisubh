@@ -2,7 +2,7 @@
 import Section from "@/components/common/section";
 import { stores } from "@/lib/dummydata";
 import mapboxgl from "mapbox-gl";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import MapSheet from "@/components/MapSheet";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
@@ -61,9 +61,20 @@ export default function Home() {
     }, []);
 
     return (
-        <Section>
-            <MapSheet />
-            <div className="h-screen w-full" ref={mapContainer} />
-        </Section>
+        <Suspense
+            fallback={
+                <h1>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Laborum, fugiat ab dignissimos iure culpa voluptas! Mollitia
+                    eius molestiae non autem ducimus necessitatibus odit,
+                    ratione maxime optio nulla saepe debitis inventore!
+                </h1>
+            }
+        >
+            <Section>
+                <MapSheet />
+                <div className="h-screen w-full" ref={mapContainer} />
+            </Section>
+        </Suspense>
     );
 }
