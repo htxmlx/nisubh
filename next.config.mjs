@@ -24,6 +24,9 @@ const nextConfigFunction = async (phase) => {
     ) {
         const withPWA = (await import("@ducanh2912/next-pwa")).default({
             dest: "public",
+            fallbacks: {
+                document: "/~offline",
+            },
         });
         return withPWA(nextConfig);
     }
