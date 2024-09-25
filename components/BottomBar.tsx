@@ -35,7 +35,7 @@ export default function BottomBar() {
     return (
         <div className="fixed bottom-0 left-0 right-0 bg-background border-t z-10">
             <div className="flex justify-between items-center max-w-screen-sm mx-auto">
-                <NavItem icon={Home} label="Home" href="/" />
+                <NavItem icon={Home} label="Home" href="/home" />
                 <NavItem icon={Map} label="Map" href="/map" />
                 <NavItem icon={PlusCircle} label="Create" href="/create" />
                 <NavItem icon={Bookmark} label="Saved" href="/saved" />
