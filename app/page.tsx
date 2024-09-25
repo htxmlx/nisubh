@@ -7,6 +7,7 @@ import { CloseTo } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PostCard } from "@/components/common/PostCard";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
     const [postCount, setPostCount] = useState(10);
@@ -15,7 +16,21 @@ export default function Home() {
     );
     const { data, isPending, isFetching } = usePosts(postCount, closeToFilter);
 
-    if (isPending) return <Section>Loading</Section>;
+    if (isPending)
+        return (
+            <Section>
+                <div className="flex gap-2">
+                    <Skeleton className="h-4 w-10" />
+                    <Skeleton className="h-4 w-12" />
+                    <Skeleton className="h-4 w-16" />
+                </div>
+                {Array.from({ length: 10 }).map((_, index) => (
+                    <div key={index} className="flex flex-col space-y-3">
+                        <Skeleton className="h-[125px] w-full max-w-sm rounded-xl" />
+                    </div>
+                ))}
+            </Section>
+        );
 
     const filterOptions = [
         { label: "All", value: undefined },
