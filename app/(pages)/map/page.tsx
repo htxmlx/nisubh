@@ -2,10 +2,13 @@
 import Section from "@/components/common/section";
 import { stores } from "@/lib/dummydata";
 import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import MapSheet from "@/components/MapSheet";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
+
+import "mapbox-gl/dist/mapbox-gl.css";
+import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 
 export default function Home() {
     const searchParams = useSearchParams();
@@ -40,6 +43,21 @@ export default function Home() {
                 },
             });
         });
+
+        map.current.addControl(new mapboxgl.FullscreenControl(), "top-left");
+        map.current.addControl(new mapboxgl.NavigationControl(), "top-left");
+        map.current.addControl(
+            new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                // @ts-ignore
+                mapboxgl,
+            })
+        );
+        map.current.addControl(new mapboxgl.GeolocateControl());
+
+        return () => {
+            map.current.remove();
+        };
     }, []);
 
     return (

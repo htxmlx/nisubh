@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 
 export default function MapSheet() {
     return (
-        <div className="fixed z-50 bg-background mt-5 w-full rounded-full flex justify-between gap-5 p-4 border">
+        <div className="fixed bottom-16 mx-2 z-50 bg-background mt-5 w-fit rounded-full flex justify-between gap-5 p-4 border">
             <Sheet>
                 <SheetTrigger asChild>
                     <Button size="icon" variant="secondary">
