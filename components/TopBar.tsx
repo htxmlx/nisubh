@@ -4,6 +4,8 @@ import { Menu, Search, User, Moon, Sun } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function TopBar() {
     const { theme, setTheme } = useTheme();
@@ -11,10 +13,17 @@ export default function TopBar() {
     return (
         <nav className="fixed top-0 left-0 right-0 bg-background rounded-full m-2 border shadow-md z-10">
             <div className="flex items-center p-2 max-w-screen-sm mx-auto">
-                <Button variant="ghost" size="icon">
-                    <Menu className="size-5" />
-                    <span className="sr-only">Menu</span>
-                </Button>
+                <Link href="/">
+                    <Button variant="ghost" size="icon">
+                        <Image
+                            src="/icons/logo.svg"
+                            alt="logo"
+                            width={25}
+                            height={25}
+                        />
+                        <span className="sr-only">Logo</span>
+                    </Button>
+                </Link>
                 <div className="flex-1 relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground size-5" />
                     <Input

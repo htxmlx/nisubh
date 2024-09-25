@@ -15,6 +15,7 @@ import {
     BedIcon,
     Droplets,
     LocateIcon,
+    School,
     WifiIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -41,7 +42,6 @@ export function PostCard({
                 opts={{
                     align: "start",
                 }}
-                className="w-full max-w-sm"
             >
                 <CarouselContent>
                     {images.length &&
@@ -90,6 +90,15 @@ export function PostCard({
                         >
                             <BedIcon className="size-3" />
                             <span>{bedroom_no} Bathroom</span>
+                        </Badge>
+                    )}
+                    {close_to && (
+                        <Badge
+                            variant="outline"
+                            className="space-x-1 text-xs font-normal"
+                        >
+                            <School className="size-3" />
+                            <span>Near {close_to} campus </span>
                         </Badge>
                     )}
                 </div>
