@@ -76,7 +76,7 @@ export function PostCard({
                     {bathroom_no && (
                         <Badge
                             variant="outline"
-                            className="space-x-1 text-xs font-thin"
+                            className="space-x-1 text-xs font-normal"
                         >
                             <BathIcon className="size-3" />
                             <span>{bathroom_no} Bathroom</span>
@@ -86,7 +86,7 @@ export function PostCard({
                     {bedroom_no && (
                         <Badge
                             variant="outline"
-                            className="space-x-1 text-xs font-thin"
+                            className="space-x-1 text-xs font-normal"
                         >
                             <BedIcon className="size-3" />
                             <span>{bedroom_no} Bathroom</span>
@@ -107,7 +107,7 @@ function StarRating({ averageRating, total }: StarRatingProps) {
     const starCount = averageRating !== null ? Math.floor(averageRating) : 0;
 
     return (
-        <div className="flex items-center font-thin gap-0.5">
+        <div className="flex items-center font-normal gap-0.5">
             <span className="text-xs">{starCount}.0</span>
             {[...Array(5)].map((_, index) => (
                 <span key={index}>

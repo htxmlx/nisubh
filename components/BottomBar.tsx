@@ -25,7 +25,7 @@ function NavItem({ icon: Icon, label, href }: NavItemProps) {
                     : "text-muted-foreground hover:text-primary"
             )}
         >
-            <Icon className="size-4" />
+            <Icon className="size-5" />
             <span className="text-xs mt-1">{label}</span>
         </Link>
     );
