@@ -20,6 +20,7 @@ export default function TopBar() {
                             alt="logo"
                             width={25}
                             height={25}
+                            className="dark:invert"
                         />
                         <span className="sr-only">Logo</span>
                     </Button>
