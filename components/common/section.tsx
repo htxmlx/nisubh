@@ -1,9 +1,14 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { PropsWithChildren } from "react";
+import { ReactNode } from "react";
 
-export default function Section({ children }: PropsWithChildren) {
+interface SectionProps {
+    className?: string;
+    children: ReactNode;
+}
+export default function Section({ children, className }: SectionProps) {
     const variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
@@ -16,7 +21,10 @@ export default function Section({ children }: PropsWithChildren) {
             exit="hidden"
             variants={variants}
             transition={{ duration: 0.5 }}
-            className="py-[4.5rem] p-2 space-y-2 max-w-screen-sm mx-auto"
+            className={cn(
+                className,
+                `py-[4.5rem] p-2 space-y-2 max-w-screen-sm mx-auto`
+            )}
         >
             {children}
         </motion.div>

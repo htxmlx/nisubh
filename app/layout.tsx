@@ -1,11 +1,14 @@
 import BottomBar from "@/components/BottomBar";
 import RQProvider from "@/components/RQProvider";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import TopBar from "@/components/TopBar";
 import { siteConfig } from "@/config/site";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Toaster } from "sonner";
+import { ClerkProvider } from "@clerk/nextjs";
+
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = localFont({
     src: "./fonts/GeistVF.woff",
@@ -64,23 +67,37 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
+        <ClerkProvider
+            appearance={{
+                variables: {
+                    colorPrimary: "hsl(263.4, 70%, 50.4%)",
+                },
+                elements: {
+                    navbarMobileMenuRow: {
+                        background: "transparent",
+                    },
+                },
+            }}
+        >
+            <html lang="en" suppressHydrationWarning>
+                <body
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
                 >
-                    <RQProvider>
-                        <TopBar />
-                        {children}
-                        <BottomBar />
-                    </RQProvider>
-                </ThemeProvider>
-            </body>
-        </html>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        <RQProvider>
+                            <TopBar />
+                            {children}
+                            <BottomBar />
+                            <Toaster />
+                        </RQProvider>
+                    </ThemeProvider>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
