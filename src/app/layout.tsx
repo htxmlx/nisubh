@@ -83,7 +83,7 @@ export default function RootLayout({
                     content="_-DsPVM1mKXI1ed-cTqkSHsCYYUB6PbqhC140RyX1kg"
                 />
                 <body
-                    className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col-reverse md:flex-row justify-center`}
+                    className={`${geistSans.variable} ${geistMono.variable} antialiased`}
                 >
                     <ThemeProvider
                         attribute="class"
@@ -92,7 +92,9 @@ export default function RootLayout({
                         disableTransitionOnChange
                     >
                         <RQProvider>
-                            <main>{children}</main>
+                            <main className="flex flex-col-reverse md:flex-row justify-center">
+                                {children}
+                            </main>
                             <Toaster />
                         </RQProvider>
                     </ThemeProvider>

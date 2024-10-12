@@ -1,4 +1,4 @@
-import { Map, PlusCircle, Rows2 } from "lucide-react";
+import { Map, MapPinHouse, PlusCircle, Rows2 } from "lucide-react";
 import Link from "next/link";
 
 export function Navigation() {
@@ -10,8 +10,11 @@ export function Navigation() {
     return (
         <>
             <aside className="hidden md:flex flex-col w-64 bg-gray-100 border-r">
-                <div className="p-4">
-                    <h2 className="text-2xl font-bold">Logo</h2>
+                <div className="flex items-center gap-2 p-5">
+                    <MapPinHouse />{" "}
+                    <h1 className="font-bold">
+                        NISU<span className="text-green-500">BH</span>
+                    </h1>
                 </div>
                 <nav className="flex-1 p-4">
                     <ul className="space-y-2">

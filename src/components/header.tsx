@@ -1,14 +1,16 @@
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { Box, User2 } from "lucide-react";
+import { MapPinHouse, User2 } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import { buttonVariants } from "./ui/button";
 
 export default function Header() {
     return (
         <div className="absolute inset-x-2 border top-2 py-3 px-2 z-50 bg-background rounded-xl flex justify-between items-center">
             <div className="flex items-center gap-2">
-                <Box /> NISU BH
+                <MapPinHouse />{" "}
+                <h1 className="font-bold">
+                    NISU<span className="text-green-500">BH</span>
+                </h1>
             </div>
             <SignedOut>
                 <Link
