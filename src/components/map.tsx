@@ -165,7 +165,7 @@ export const MapboxMap = ({ data }: MapProps) => {
                                 "gap-2"
                             )}
                         >
-                            <Phone /> Call
+                            More Details
                         </a>
                     </DrawerFooter>
                 </DrawerContent>
