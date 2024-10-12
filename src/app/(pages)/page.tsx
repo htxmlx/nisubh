@@ -41,7 +41,7 @@ export default function Home() {
     return (
         <div className="relative h-[92vh] md:h-screen w-full">
             <Header />
-            <div className="absolute inset-x-2 top-24 z-50 flex gap-2 justify-end">
+            <div className="absolute inset-x-2 top-20 z-50 flex gap-2 justify-end">
                 <Drawer>
                     <DrawerTrigger asChild>
                         <Button className="gap-2" variant="secondary">

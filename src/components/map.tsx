@@ -1,5 +1,4 @@
 import StylesControl from "@mapbox-controls/styles";
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import mapboxgl, { GeolocateControl, NavigationControl } from "mapbox-gl";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,15 +17,10 @@ import {
 import "@mapbox-controls/styles/src/index.css";
 import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css";
 import { StarFilledIcon } from "@radix-ui/react-icons";
-import {
-    CircleArrowOutUpRight,
-    MapPin,
-    Phone,
-    SignpostBig,
-} from "lucide-react";
+import { CircleArrowOutUpRight, MapPin, Phone } from "lucide-react";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { Button } from "./ui/button";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 interface MapProps {
     data: PostWithRating[];
