@@ -49,10 +49,10 @@ export const MapboxMap = ({ data }: MapProps) => {
 
         // Add controls
         const addControls = (map: mapboxgl.Map) => {
-            map.addControl(
-                new MapboxGeocoder({ accessToken: mapboxgl.accessToken }),
-                "bottom-left"
-            );
+            // map.addControl(
+            //     new MapboxGeocoder({ accessToken: mapboxgl.accessToken }),
+            //     "bottom-left"
+            // );
             map.addControl(new StylesControl({ compact: true }), "bottom-left");
             map.addControl(new NavigationControl(), "bottom-right");
             map.addControl(
