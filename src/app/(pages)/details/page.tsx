@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/components/header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
     Carousel,
@@ -56,6 +57,7 @@ export default function Page({
 
     return (
         <Section className="gap-5 flex flex-col justify-between">
+            <Header />
             <div className="grid gap-4">
                 <Carousel className="rounded-xl overflow-hidden">
                     <CarouselContent>
