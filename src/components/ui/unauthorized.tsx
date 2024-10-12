@@ -19,13 +19,23 @@ export default function UnauthorizedPage() {
                     landlord account, please contact #09123133321.
                 </p>
 
-                <Button
-                    variant="default"
-                    className="w-full"
-                    onClick={() => router.back()}
-                >
-                    Return to Previous Page
-                </Button>
+                <div className="flex flex-col">
+                    <Button
+                        variant="default"
+                        className="w-full"
+                        onClick={() => router.push("/sign-in")}
+                    >
+                        Sign In
+                    </Button>
+                    or
+                    <Button
+                        variant="default"
+                        className="w-full"
+                        onClick={() => router.back()}
+                    >
+                        Return to Previous Page
+                    </Button>
+                </div>
             </div>
         </div>
     );

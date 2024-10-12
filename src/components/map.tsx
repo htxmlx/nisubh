@@ -20,7 +20,8 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 import { CircleArrowOutUpRight, MapPin, Phone } from "lucide-react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import Image from "next/image";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 interface MapProps {
     data: PostWithRating[];
@@ -107,10 +108,18 @@ export const MapboxMap = ({ data }: MapProps) => {
                             </div>
                         </DrawerDescription>
                         <div className="grid grid-cols-3 md:grid-cols-4 w-fit gap-2">
-                            <Button size="sm" className="gap-2">
+                            <a
+                                href={`https://www.google.com/maps/dir/?api=1&destination=${selected?.latitude},${selected?.longitude}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={cn(
+                                    buttonVariants({ size: "sm" }),
+                                    "gap-2"
+                                )}
+                            >
                                 <CircleArrowOutUpRight className="size-4" />
                                 Directions
-                            </Button>
+                            </a>
                             <Button size="sm" className="gap-2">
                                 <Phone /> Call
                             </Button>
