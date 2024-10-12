@@ -209,7 +209,7 @@ export default function CreatePostForm() {
                             control={form.control}
                             name="close_to"
                             render={({ field }) => (
-                                <FormItem>
+                                <FormItem aria-label="Nearest Campus">
                                     <FormLabel>Nearest Campus</FormLabel>
                                     <Select
                                         onValueChange={field.onChange}

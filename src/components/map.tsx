@@ -36,17 +36,13 @@ export const MapboxMap = ({ data }: MapProps) => {
 
         mapRef.current = new mapboxgl.Map({
             container: "map",
-            style: "mapbox://styles/mapbox/streets-v12",
+            style: "mapbox://styles/mapbox/satellite-streets-v12",
             center: [123.14389088712784, 11.461424460015792],
             zoom: 13,
         });
 
         // Add controls
         const addControls = (map: mapboxgl.Map) => {
-            // map.addControl(
-            //     new MapboxGeocoder({ accessToken: mapboxgl.accessToken }),
-            //     "bottom-left"
-            // );
             map.addControl(new StylesControl({ compact: true }), "bottom-left");
             map.addControl(new NavigationControl(), "bottom-right");
             map.addControl(

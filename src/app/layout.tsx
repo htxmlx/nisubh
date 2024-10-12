@@ -92,7 +92,7 @@ export default function RootLayout({
                         disableTransitionOnChange
                     >
                         <RQProvider>
-                            {children}
+                            <main>{children}</main>
                             <Toaster />
                         </RQProvider>
                     </ThemeProvider>
