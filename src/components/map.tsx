@@ -161,6 +161,15 @@ export const MapboxMap = ({ data }: MapProps) => {
                         <Button onClick={() => setSelected(null)}>
                             More Details
                         </Button>
+                        <a
+                            href={`/details?id=${selected?.id}`}
+                            className={cn(
+                                buttonVariants({ size: "sm" }),
+                                "gap-2"
+                            )}
+                        >
+                            <Phone /> Call
+                        </a>
                     </DrawerFooter>
                 </DrawerContent>
             </Drawer>
