@@ -120,9 +120,15 @@ export const MapboxMap = ({ data }: MapProps) => {
                                 <CircleArrowOutUpRight className="size-4" />
                                 Directions
                             </a>
-                            <Button size="sm" className="gap-2">
+                            <a
+                                href={`tel:${selected?.owner_contact}`}
+                                className={cn(
+                                    buttonVariants({ size: "sm" }),
+                                    "gap-2"
+                                )}
+                            >
                                 <Phone /> Call
-                            </Button>
+                            </a>
                             <Button
                                 size="sm"
                                 variant="outline"

@@ -39,7 +39,7 @@ export default function Home() {
     });
 
     return (
-        <div className="relative h-[92vh] md:h-screen w-full">
+        <div className="relative h-[92vh] md:h-screen w-full overflow-y-hidden">
             <Header />
             <div className="absolute inset-x-2 top-20 z-50 flex gap-2 justify-end">
                 <Drawer>
