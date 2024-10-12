@@ -410,12 +410,16 @@ export default function CreatePostForm() {
                         name="images"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Upload up to 4 images</FormLabel>
+                                <FormLabel>
+                                    Upload up to 4 images and minimum of 8 mb
+                                </FormLabel>
                                 <FormControl>
                                     <UploadButton
                                         appearance={{
                                             button: {
                                                 width: "100%",
+                                                color: "white",
+                                                backgroundColor: "hsl(0 0% 9%)",
                                             },
                                         }}
                                         endpoint="imageUploader"

@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <div className="absolute inset-x-2 border top-2 py-3 px-2 z-50 bg-background rounded-xl flex justify-between items-center">
             <div className="flex items-center gap-2">
-                <MapPinHouse />{" "}
+                <MapPinHouse className="text-black fill-green-500" />{" "}
                 <h1 className="font-bold">
                     NISU<span className="text-green-500">BH</span>
                 </h1>

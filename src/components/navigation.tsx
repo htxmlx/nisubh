@@ -11,7 +11,7 @@ export function Navigation() {
         <>
             <aside className="hidden md:flex flex-col w-64 bg-gray-100 border-r">
                 <div className="flex items-center gap-2 p-5">
-                    <MapPinHouse />{" "}
+                    <MapPinHouse className="text-black fill-green-500" />{" "}
                     <h1 className="font-bold">
                         NISU<span className="text-green-500">BH</span>
                     </h1>
