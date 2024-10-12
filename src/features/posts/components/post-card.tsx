@@ -27,32 +27,32 @@ export function PostCard({
     close_to,
 }: PostWithRating) {
     return (
-        <Card className="p-2">
-            <Carousel
-                opts={{
-                    align: "start",
-                }}
-            >
-                <CarouselContent>
-                    {images.length &&
-                        images.map((img) => (
-                            <CarouselItem className="basis-2/5">
-                                <div className="relative aspect-video">
-                                    <Image
-                                        src={img}
-                                        alt={title}
-                                        fill
-                                        className="aspect-video object-cover rounded-lg"
-                                    />
-                                </div>
-                            </CarouselItem>
-                        ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
+        <Link href={`/details?id=${id}`} className="space-y-2">
+            <Card className="p-2">
+                <Carousel
+                    opts={{
+                        align: "start",
+                    }}
+                >
+                    <CarouselContent>
+                        {images.length &&
+                            images.map((img) => (
+                                <CarouselItem className="basis-2/5">
+                                    <div className="relative aspect-video">
+                                        <Image
+                                            src={img}
+                                            alt={title}
+                                            fill
+                                            className="aspect-video object-cover rounded-lg"
+                                        />
+                                    </div>
+                                </CarouselItem>
+                            ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
 
-            <Link href={`/details?id=${id}`} className="space-y-2">
                 <h1 className="text-sm">{title}</h1>
                 <div className="flex gap-2">
                     <StarRating
@@ -86,8 +86,8 @@ export function PostCard({
                         </Badge>
                     )}
                 </div>
-            </Link>
-        </Card>
+            </Card>
+        </Link>
     );
 }
 

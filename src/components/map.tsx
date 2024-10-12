@@ -158,9 +158,6 @@ export const MapboxMap = ({ data }: MapProps) => {
                         <DrawerClose />
                     </DrawerHeader>
                     <DrawerFooter>
-                        <Button onClick={() => setSelected(null)}>
-                            More Details
-                        </Button>
                         <a
                             href={`/details?id=${selected?.id}`}
                             className={cn(
