@@ -1,12 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Map, MapPinHouse, PlusCircle, Rows2 } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 export function Navigation() {
-    const path = usePathname();
     const navItems = [
         { name: "Explore", icon: Map, href: "/" },
         { name: "Create", icon: PlusCircle, href: "/create" },
@@ -44,11 +41,7 @@ export function Navigation() {
                         <li key={item.name}>
                             <Link
                                 href={item.href}
-                                className={cn(
-                                    "flex flex-col items-center p-2 text-gray-700 hover:bg-gray-100",
-                                    path === item.href &&
-                                        "bg-primary text-primary-foreground"
-                                )}
+                                className="flex flex-col items-center p-2 text-gray-700 hover:bg-gray-100"
                             >
                                 <item.icon className="w-6 h-6 mb-1" />
                                 <span className="text-xs">{item.name}</span>
