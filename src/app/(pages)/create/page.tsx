@@ -8,12 +8,12 @@ export default function Page() {
     return (
         <Section>
             <Header />
-            <Protect
+            {/* <Protect
                 fallback={<UnauthorizedPage />}
                 permission="org:listing:create"
-            >
-                <CreatePostForm />
-            </Protect>
+            > */}
+            <CreatePostForm />
+            {/* </Protect> */}
         </Section>
     );
 }

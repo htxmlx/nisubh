@@ -1,6 +1,6 @@
 "use client";
 
-import { Map, MapPinHouse, PlusCircle, Rows2 } from "lucide-react";
+import { Map, MapPinHouse, PlusCircle, Rows2, UserCircle } from "lucide-react";
 import Link from "next/link";
 
 export function Navigation() {
@@ -8,6 +8,7 @@ export function Navigation() {
         { name: "Explore", icon: Map, href: "/" },
         { name: "Create", icon: PlusCircle, href: "/create" },
         { name: "Listings", icon: Rows2, href: "/listings" },
+        { name: "Admin", icon: UserCircle, href: "/admin" },
     ];
     return (
         <>
